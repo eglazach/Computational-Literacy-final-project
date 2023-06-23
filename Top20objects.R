@@ -1,0 +1,5 @@
+name_frequency <- table(MetObjects_objects_category$`Object Name`)
+sorted_names <- sort(name_frequency, decreasing = TRUE)
+top_20_names <- head(sorted_names, 20)
+top_20_names_df <- data.frame(ObjectName = names(top_20_names), Frequency = top_20_names)
+write.csv(top_20_names_df, file = "top_20_names.csv", row.names = FALSE)
